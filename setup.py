@@ -6,7 +6,7 @@ from setuptools import setup
 setup(
     name='TracEasyOrder',
     version='0.1',
-    packages='traceasyorder',
+    packages=['traceasyorder'],
     author='Erik Bray',
     author_email='erik.m.bray@gmail.com',
     description='Adds a nicer (JavaScript-based) UI for ordering enumerable '
