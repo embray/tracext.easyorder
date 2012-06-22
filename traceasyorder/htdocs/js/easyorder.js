@@ -15,8 +15,19 @@ $(document).ready(function() {
                 // There are more clever ways to do this somewhat more
                 // efficiently, but for now it will suffice to update the order
                 // values of all rows
-                $(table).find("select[name^=value_]").each(function (idx) {
-                    $(this).val(idx + 1);
+                var href = document.location.pathname;
+                if (href.match(/\/admin\/ticket\/customfields$/)) {
+                    // Dumb special case for the Custom Field Admin plugin,
+                    // which starts ordering from 0
+                    var selector = "select[name^=order_]";
+                    var offset = 0;
+                } else {
+                    var selector = "select[name^=value_]";
+                    var offset = 1;
+                }
+
+                $(table).find(selector).each(function (idx) {
+                    $(this).val(idx + offset);
                 });
             }
         });
