@@ -11,7 +11,8 @@ setup(
     description='Adds a nicer (JavaScript-based) UI for ordering enumerable '
                 'ticket fields (severity, type, etc.) in Trac.',
     install_requires=['Trac>=0.12'],
-    packages=['traceasyorder'],
-    package_data={'traceasyorder': ['htdocs/js/*.js']},
-    entry_points={'trac.plugins': ['traceasyorder = traceasyorder']}
+    packages=['tracext, tracext.easyorder'],
+    namespace_packages=['tracext'],
+    package_data={'tracext.easyorder': ['htdocs/js/*.js']},
+    entry_points={'trac.plugins': ['tracext.easyorder = tracext.easyorder']}
 )
